@@ -1,0 +1,109 @@
+.intro {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 64px;
+  height: 100vh;
+  text-align: center;
+  &.active {
+    .intro__header {
+      visibility: visible;
+      span {
+        --animation-delay: 0;   
+        animation: 1s reveal ease forwards;
+        animation-delay: var(--animation-delay);
+        transform: translateY(100%) rotate(12deg);
+        transform-origin: left;
+      }
+    }
+    .intro__button {
+      visibility: visible;
+      &::after {
+        transition: .6s cubic-bezier(1,0,0,1) all;
+        transition-delay: 2s;
+        width: 100%;
+      }
+    }
+  }
+  &__button {
+    color: transparent;
+    display: inline-block;
+    font-size: 18px;
+    overflow-x: hidden;
+    position: relative;
+    padding: 0 0 12px;
+    > div {
+      overflow: hidden;
+    }
+    &::after,
+    &::before {
+      background: $white;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: .5px;
+      position: absolute;
+      width: 0%;
+    }
+    &::before {
+      background: $black;
+      left: -100%;
+      transition: .6s cubic-bezier(.6,0,0,.6) left;
+      width: 100%;
+      z-index: 1;
+    }
+    span {
+      --animation-delay: 1.4s;
+      animation: .5s slideUp cubic-bezier(1,0,0,.05) forwards;
+      animation-delay: var(--animation-delay);
+      color: $white;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      transform: translateY(100%);
+    }
+    i {
+      font-style: normal;
+      transition: .2s ease transform;
+    }
+    &:hover > div i {
+      position: relative;
+      transform: translateX(4px);
+    }
+    &:hover::before {      
+      left: 100%;
+      transition: .6s cubic-bezier(.6,0,0,.6) left;
+    }
+  }
+  .intro__header {
+    visibility: hidden;
+    font-family: $primary-font;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 145%;
+    margin: 0 auto;
+    text-align: center;
+    div {
+      display: block;
+      overflow: hidden;
+    }
+    span {
+      display: inline-block;    
+    }
+  }
+}
+
+
+@keyframes reveal {
+  to {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
