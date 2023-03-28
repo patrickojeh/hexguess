@@ -1,0 +1,23 @@
+@font-face {
+	font-display: block;
+	font-family: 'Messina Sans';	
+	font-weight: 600;
+	src: url('./../fonts/MessinaSans-SemiBold.woff') format('woff'),
+			 url('./../fonts/MessinaSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-display: block;
+	font-family: 'Messina Sans';	
+	font-weight: normal;
+	src: url('./../fonts/MessinaSans-Regular.woff') format('woff'),
+			 url('./../fonts/MessinaSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-display: block;
+	font-family: 'Bebas Neue';	
+	font-weight: normal;
+	src: url('./../fonts/BebasNeue-Regular.woff') format('woff'),
+			 url('./../fonts/BebasNeue-Regular.ttf') format('truetype');
+}
