@@ -13,12 +13,25 @@ module.exports = {
 	},
 	entry: path.resolve(__dirname, 'client/src/index.js'),
 	output: {
-		filename: 'bundle.min.js',
-		path: path.resolve(__dirname, 'dist')
+		clean: true,
+		filename: 'bundle.[contenthash].js',
+		path: path.resolve(__dirname, 'dist'),
+		assetModuleFilename: '[name][ext]'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(png|jpg|jpeg|svg|gif)$/i,
+				type: 'asset/resource'
+			}
+		]
 	},
 	plugins: [
 		new htmlWebpackPlugin({
-			content: 'Patrickkkk',
 			filename: 'index.html',
 			template: path.resolve(__dirname, 'client/views/index.html')
 		})
