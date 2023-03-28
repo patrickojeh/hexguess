@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 64px;
+  gap: 48px;
   height: 100vh;
   text-align: center;
   &.active {
@@ -47,7 +47,7 @@
       width: 0%;
     }
     &::before {
-      background: $black;
+      background: $near-black;
       left: -100%;
       transition: .6s cubic-bezier(.6,0,0,.6) left;
       width: 100%;
