@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     introHeader.querySelector('div:last-child > span').addEventListener('animationend', () => {
       const introButton = document.querySelector('.intro__button');
       const buttonText = introButton.textContent;
-      introButton.innerHTML = `<div><span><i>${buttonText}</i> <img height="10" src="${playIcon}"/></span></div>`;
+      introButton.innerHTML = `<div><span><i>${buttonText}</i> <img height="11" src="${playIcon}"/></span></div>`;
     })
   }, 600);
 })

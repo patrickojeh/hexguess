@@ -6,6 +6,12 @@
   gap: 48px;
   height: 100vh;
   text-align: center;
+  & > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;    
+    gap: 40px;
+  }
   &.active {
     .intro__header {
       visibility: visible;
@@ -29,25 +35,26 @@
   &__button {
     color: transparent;
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     overflow-x: hidden;
     position: relative;
     padding: 0 0 12px;
+    width: max-content;
     > div {
       overflow: hidden;
     }
     &::after,
     &::before {
-      background: $white;
+      background: $near-black;
       bottom: 0;
       content: '';
       display: block;
-      height: .5px;
+      height: 1px;
       position: absolute;
       width: 0%;
     }
     &::before {
-      background: $near-black;
+      background: $white;
       left: -100%;
       transition: .6s cubic-bezier(.6,0,0,.6) left;
       width: 100%;
@@ -57,10 +64,10 @@
       --animation-delay: 1.4s;
       animation: .5s slideUp cubic-bezier(1,0,0,.05) forwards;
       animation-delay: var(--animation-delay);
-      color: $white;
+      color: $near-black;
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 16px;
       transform: translateY(100%);
     }
     i {
@@ -79,9 +86,9 @@
   .intro__header {
     visibility: hidden;
     font-family: $primary-font;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 145%;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 155%;
     margin: 0 auto;
     text-align: center;
     div {
