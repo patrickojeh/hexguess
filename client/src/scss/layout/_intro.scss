@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 48px;
   height: 100vh;
+  padding: 24px;
   text-align: center;
   & > div {
     align-items: center;
@@ -39,7 +40,6 @@
     overflow-x: hidden;
     position: relative;
     padding: 0 0 12px;
-    width: max-content;
     > div {
       overflow: hidden;
     }
