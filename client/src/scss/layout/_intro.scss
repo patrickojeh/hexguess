@@ -36,7 +36,7 @@
   &__button {
     color: transparent;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     overflow-x: hidden;
     position: relative;
     padding: 0 0 12px;
@@ -69,6 +69,7 @@
       align-items: center;
       gap: 16px;
       transform: translateY(100%);
+      white-space: nowrap;
     }
     i {
       font-style: normal;
@@ -83,10 +84,10 @@
       transition: .6s cubic-bezier(.6,0,0,.6) left;
     }
   }
-  .intro__header {
+  &__header {
     visibility: hidden;
     font-family: $primary-font;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     line-height: 155%;
     margin: 0 auto;
@@ -112,5 +113,17 @@
 @keyframes slideUp {
   to {
     transform: translateY(0);
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .intro {
+    &__header { 
+      font-size: 18px;
+    }
+    &__button { 
+      font-size: 16px;
+    }
   }
 }
