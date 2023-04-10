@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     intro.classList.add('active');
     const introHeader = document.querySelector('.intro__header');    
     const headerText = introHeader.innerHTML;
+    introHeader.innerHTML = '';
     const splitHeaderText = headerText.split('<br>').map((sentence, index) => {
       const div = document.createElement('div');
       const span = document.createElement('span');
@@ -14,10 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
       div.appendChild(span);
       return div;
     });
-    introHeader.innerHTML = '';
-    splitHeaderText.forEach(line => {
-      introHeader.insertAdjacentElement('beforeEnd', line);
-    })
+    splitHeaderText.forEach(line => introHeader.insertAdjacentElement('beforeEnd', line));
 
     introHeader.querySelector('div:last-child > span').addEventListener('animationend', () => {
       const introButton = document.querySelector('.intro__button');
